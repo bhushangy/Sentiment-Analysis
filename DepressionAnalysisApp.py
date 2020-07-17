@@ -1,6 +1,7 @@
 from flask import Flask, redirect, render_template, request, url_for, session
 import time
 import re
+import os
 
 
 
@@ -128,4 +129,4 @@ def newlog():
 	return redirect(url_for("index"))	
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=os.environ["PORT"])
