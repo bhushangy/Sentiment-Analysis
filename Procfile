@@ -1,1 +1,1 @@
-web: gunicorn app:DepressionAnalysisApp.py
+web: gunicorn DepressionAnalysisApp:app
