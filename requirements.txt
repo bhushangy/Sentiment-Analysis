@@ -18,4 +18,4 @@ scikit_learn == 0.21.2
 # Depression-Detector/DepressionAnalysisApp.py: 33
 spacy == 2.3.2
 
--e https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
+git+git://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz
