@@ -59,19 +59,6 @@ def index():
 # Feed the training data through the pipeline
 				text_clf.fit(X_train.values.astype('U'), y_train) 
 
-
-# In[5]:
-
-
-				
-					
-
-
-# In[20]:
-
-
-
-    
 				import nltk
 				nltk.download('vader_lexicon')
 				from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -101,23 +88,30 @@ def index():
 					avg=sum(list)/5
 					session["list"]=[]
 					if(avg>=0 and avg<=0.2):
-						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="Stay Happy !!")
+						session.clear()
+						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="Stay Happy !!") 
 					elif(avg>0.2 and avg<=0.35):
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="Carry on the smile ")	
 					elif (avg>0.35 and avg<=0.45):
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="So good to see that you are very happy !")	
 					elif (avg>0.45):
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="Overwhelming !")
 					elif(avg<0 and avg>=-0.2):
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="You are sad ")					
 					elif(avg<-0.2 and avg>=-0.35):
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="You are down a little bit .Nothing to worry about much . Stay happy !!")
 
 					elif(avg<-0.35 and avg>=-0.45):	
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="Take Care of yout health. Be calm and enjoy each and every bit of life.Visit a psychologist")
 					elif(avg<-0.45):	
+						session.clear()
 						return render_template("index.html",msg=out,score="Compound Score :"+str(avg),advise="Immediately consult a psychologist !")
-					
 				elif(session["five"]==1):	
 					return render_template("index.html",msg=out,score="",advise="",five="Please submit "+str(session["five"])+ " more sentence for score and advise")
 				else:	
@@ -129,4 +123,4 @@ def newlog():
 	return redirect(url_for("index"))	
 
 if __name__ == '__main__':
-    app.run(debug=True,port=os.environ["PORT"])
+    app.run(debug=True)
