@@ -13,8 +13,8 @@ Do not worry as there is an image of this app in the docker hub using which u ca
 Just follow the below commands:
 </p>
 <blockquote>
-1) sudo docker pull bhushangy1999/sentiment-analysis:latest
-2) sudo docker run -p 5001:5001 bhushangy1999/sentiment-analysis:latest
+1) sudo docker pull bhushangy1999/sentiment-analysis:latest <br>
+2) sudo docker run -p 5001:5001 bhushangy1999/sentiment-analysis:latest <br>
 
 Thats it open the browser at http://0.0.0.0:5001/ and u could try this app out...
 </blockquote>
