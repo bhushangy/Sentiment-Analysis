@@ -4,7 +4,7 @@
 Flask == 1.1.1
 
 # Depression-Detector/DepressionAnalysisApp.py: 35,62,64
-nltk == 3.4.4
+nltk == 3.6.6
 
 # Depression-Detector/DepressionAnalysisApp.py: 32
 numpy == 1.16.4
